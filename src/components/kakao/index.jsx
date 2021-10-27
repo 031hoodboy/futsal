@@ -13,6 +13,8 @@ const KakaoSignUp = () => {
         if (userInfo) {
             let user = userInfo.data.profile.kakao_account;
             console.log("access_token", userInfo.data.response.access_token);
+            console.log("email", user.email)
+            console.log("nickname", user.profile.nickname);
         }
     }, [userInfo]);
 
@@ -28,8 +30,7 @@ const KakaoSignUp = () => {
 }
 
 const KaKaoBtn = styled(KakaoLogin)`
-    padding: 0;
-    width: 190px;
+    padding: 0 20px;
     height: 44px;
     line-height: 44px;
     color: #783c00;

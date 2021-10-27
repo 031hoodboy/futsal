@@ -11,7 +11,7 @@ const RootRoute = () => {
             <GlobalStyles />
             <Switch>
                 <Route path='/' component={LoginPage} exact />
-                <Route path="*" component={NoMatchPage} />
+                <Route path="/*" component={NoMatchPage} />
             </Switch>
         </BrowserRouter>
     );

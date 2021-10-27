@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import GoogleSignUp from '../../components/google';
 import KakaoSignUp from '../../components/kakao';
 import NaverSignUp from '../../components/naver';
-import { LoginBox, LoginWrapper } from './styled';
 import ReactGa from 'react-ga'
+import styled from "styled-components";
 
 const LoginPage = () => {
 
@@ -15,21 +15,36 @@ const LoginPage = () => {
     return (
         <LoginWrapper>
             <LoginBox>
-                <h2>소셜 로그인</h2>
-                <ul>
-                    <li>
-                        <KakaoSignUp />
-                    </li>
-                    <li>
-                        <GoogleSignUp />
-                    </li>
-                    <li>
-                        <NaverSignUp />
-                    </li>
-                </ul>
+                <LoginBoxTitle>로그인</LoginBoxTitle>
+                <KakaoSignUp />
+                <NaverSignUp />
+                <GoogleSignUp />
             </LoginBox>
         </LoginWrapper>
     );
 };
+
+
+const LoginWrapper = styled.div`
+width:100%;
+height: 80vh;
+display:flex;
+justify-content: center;
+align-items: center;
+`;
+
+const LoginBox = styled.div`
+    width:400px;
+    padding:40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const LoginBoxTitle = styled.div`
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+`;
 
 export default LoginPage;
